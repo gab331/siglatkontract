@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siglat Konstract OPC — Structural Engineering, Seismic Retrofit, Emergency Repair</title>
+<meta name="description" content="Structural engineering consultancy in the Philippines. Seismic retrofit, emergency structural repair, construction management. Licensed RCE serving industrial, commercial, and residential projects.">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1a365d;
+  --text: #2d3748;
+  --text-secondary: #4a5568;
+  --link: #2c5aa0;
+  --bg: #ffffff;
+  --border: #cbd5e0;
+  --hero-bg: #f7fafc;
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.nav-brand {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-links { display: flex; gap: 24px; }
+
+.nav-links a {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--primary); margin: 5px 0; transition: 0.2s; }
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.hero .tagline {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+
+.hero .description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-of-type { border-bottom: none; }
+
+.section-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+section > .container > h2 {
+  font-size: 28px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+section p {
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+section p:last-child { margin-bottom: 0; }
+
+/* ── SERVICES ── */
+.service-item { margin-bottom: 36px; }
+.service-item:last-child { margin-bottom: 0; }
+
+.service-item h3 {
+  font-size: 20px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.service-item p {
+  color: var(--text);
+  font-size: 18px;
+}
+
+.services-intro {
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+/* ── PROJECTS ── */
+.project {
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.project:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+.project h3 {
+  font-size: 21px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.project p { font-size: 18px; }
+
+.project .client {
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* ── RESEARCH ── */
+.publication {
+  margin-bottom: 36px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.publication:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+.publication h3 {
+  font-size: 20px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.35;
+  font-style: italic;
+}
+
+.publication p { font-size: 18px; }
+
+.publication a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.publication a:hover { text-decoration: underline; }
+
+/* ── ABOUT ── */
+.principles {
+  margin: 24px 0;
+}
+
+.principle {
+  margin-bottom: 24px;
+}
+
+.principle:last-child { margin-bottom: 0; }
+
+.principle strong {
+  color: var(--primary);
+}
+
+/* ── CONTACT ── */
+.contact-info {
+  margin-top: 24px;
+}
+
+.contact-info p {
+  margin-bottom: 8px;
+}
+
+.contact-info a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover { text-decoration: underline; }
+
+.contact-note {
+  margin-top: 24px;
+  color: var(--text);
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+
+  .hero { padding: 48px 0 40px; }
+  .hero h1 { font-size: 28px; }
+  .hero .tagline { font-size: 15px; }
+  .hero .description { font-size: 17px; }
+
+  section { padding: 48px 0; }
+  section > .container > h2 { font-size: 24px; }
+
+  .service-item h3, .project h3, .publication h3 { font-size: 19px; }
+
+  .nav-links { 
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.98);
+    flex-direction: column;
+    padding: 16px 24px 20px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-brand">SIGLAT KONSTRACT OPC</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <h1>We retrofit structures that other engineers won't touch.</h1>
+    <p class="tagline">Siglat Konstract OPC — Structural Engineering, Seismic Retrofit, Emergency Repair. Philippines.</p>
+    <p class="description">When five corroded steel columns detach from their bases in a chlorine warehouse in Seismic Zone 4 and the building is still standing on redistributed load paths alone — someone has to design the fix, sequence the repair so no one dies during construction, and get it built. That's what we do.</p>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="section-label">Services</p>
+    <h2>What We Do</h2>
+    <p class="services-intro">We take on structural problems that require engineering judgment, not just software output. Our work concentrates where the consequences of getting it wrong are highest — seismic zones, corroded structures, occupied facilities, and hard deadlines.</p>
+
+    <div class="service-item">
+      <h3>Structural Assessment and Design</h3>
+      <p>New structural design for residential, commercial, and industrial buildings. Existing structure assessment when the original drawings are missing, the steel is corroded, or the loads have changed since the building was built. We measure what's there, model what it does, and determine what it can carry — with real numbers, not assumptions.</p>
+    </div>
+
+    <div class="service-item">
+      <h3>Seismic Vulnerability Assessment and Retrofit Design</h3>
+      <p>Evaluation of existing structures against NSCP 2015 seismic provisions. Retrofit design for steel and concrete buildings in Seismic Zone 4 — including connection redesign, knee brace systems, RC pedestal encasement, and progressive collapse assessment. We design retrofits that can be built while the building stays operational.</p>
+    </div>
+
+    <div class="service-item">
+      <h3>Emergency Structural Repair and Stabilization</h3>
+      <p>When a structure has partially failed and needs immediate intervention — temporary bracing design, load redistribution analysis, phased repair sequencing. We've done this under emergency timelines on structures that were surviving on residual capacity alone. Every repair sequence is designed so that no construction phase creates a condition worse than the existing damage.</p>
+    </div>
+
+    <div class="service-item">
+      <h3>Construction Management and Project Delivery</h3>
+      <p>We manage construction on projects where the structural work is the critical path — retrofit installations, renovation within operating facilities, and fast-track delivery where schedule is not negotiable. Background in Ayala Land Premier high-rise construction, where the tolerance for a finished deliverables and zero-defect handover is the baseline, not the aspiration.</p>
+    </div>
+
+    <div class="service-item">
+      <h3>General Construction and Execution</h3>
+      <p>Residential houses, warehouses, industrial buildings. Design through construction. We build what we design, and we design what we know how to build. No gap between the drawing and the field.</p>
+    </div>
+
+    <div class="service-item">
+      <h3>Material Supply and Procurement</h3>
+      <p>Structural steel, reinforcing bar, and construction materials — sourced and delivered to project sites. We leverage direct supplier relationships to control cost, lead time, and material certification for our projects.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <h2>Selected Work</h2>
+
+    <article class="project">
+      <h3>Seismic Retrofit — Chlorine Warehouse, Mauban, Quezon</h3>
+      <p>Five steel columns detached from their bases. Five more corroded to partial section loss. A chlorine storage facility in Seismic Zone 4 that was standing only because the roof diaphragm was redistributing loads the original design never anticipated. No as-built drawings. No site visit allowed before design. Emergency timeline.</p>
+      <p>We designed the complete retrofit: RC pedestal encasement with boot plate connections, knee brace lateral stiffening at 70° angle, 42 MPa high-early-strength concrete for schedule, and a phased construction sequence limiting work to two columns simultaneously. Every temporary bracing stage was designed for full gravity load plus a 2.0 dynamic impact factor. Anchor bolt connections verified per ACI 318-14 Chapter 17 with concrete breakout capacity confirmed at D/C = 0.39. Progressive collapse assessment identified the knee braces as providing an unintended but significant alternate load path for future column base deterioration — the same mechanism that caused the original failure. The structure was repaired without incident.</p>
+      <p class="client">Client: Advanced Matrix Construction Inc. for Quezon Power (Philippines) Ltd.</p>
+    </article>
+
+    <article class="project">
+      <h3>Auditorium-to-Office Renovation — AEI Laguna Technopark</h3>
+      <p>A 70-day conversion of a corporate auditorium into finished office space inside an operating semiconductor facility. Hard deadline. No extensions. The facility ran 24/7 around our construction zone.</p>
+      <p>Delivered on schedule, within budget, with the facility operational throughout.</p>
+      <p class="client">Client: Advance Energy Inc.</p>
+    </article>
+
+    <article class="project">
+      <h3>High-Rise Residential Construction — Ayala Land Premier</h3>
+      <p>Construction experience on Arbor Lanes and Alveo high-rise residential towers. Ayala Land Premier projects operate at a quality standard that most Philippine contractors never encounter — architectural concrete tolerances of 3mm over a 3-meter straightedge, zero-defect unit handover, and a QA culture where "good enough" does not exist.</p>
+      <p>This background informs everything we do at Siglat Konstract. We brought ALP-grade discipline to industrial retrofit and warehouse construction because precision is a habit, not a project-specific decision.</p>
+    </article>
+
+    <article class="project">
+      <h3>Residential and Warehouse Design-Build</h3>
+      <p>Single and multi-family residential structures. Steel and concrete warehouse buildings. Full service from structural design through construction and turnover.</p>
+    </article>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <p class="section-label">Research</p>
+    <h2>Technical Publications</h2>
+    <p>We publish original engineering work. These are not brochures — they are structural calculations, verified analysis, and design methodologies based on real problems.</p>
+
+    <div class="publication">
+      <h3>Through-Truss Mezzanine System for Long-Span Column-Free Office Floors in Existing Steel Portal Frame Warehouses</h3>
+      <p>A structural feasibility study investigating a novel framing concept for 30-meter clear span mezzanines inside existing portal frame warehouses. The through-truss system places the primary structure above the mezzanine floor — using the unused roof volume as structural depth — achieving vibration compliance per AISC Design Guide 11 at spans where conventional below-floor systems fail. Combined system natural frequency: 11.2 Hz. Peak walking acceleration: 0.005% g. Full member design per AISC 360-16, NSCP 2015, and ACI 318-14.</p>
+      <p><a href="#">Download the study (PDF)</a></p>
+    </div>
+
+    <div class="publication">
+      <h3>Emergency Seismic Retrofit of Corroded Steel Columns — A Case Study from Mauban, Quezon</h3>
+      <p>(In preparation) — Documenting the structural assessment, retrofit design, and construction of the chlorine warehouse column restoration. Includes modal analysis comparison (intact vs. damaged vs. retrofitted), anchor bolt connection verification, progressive collapse assessment, and an honest discussion of what was learned and what would be done differently.</p>
+      <p>Publication expected 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">The Engineer</p>
+    <h2>About</h2>
+    <p>Siglat Konstract OPC is a one-engineer structural consultancy. The principal is Engr. Gabriel C. Mempin — licensed Civil Engineer (RCE) and Registered Master Plumber (RMP), with project experience spanning high-rise residential construction, industrial facility renovation, and emergency structural retrofit.</p>
+
+    <p>The firm operates on three principles that are not negotiable:</p>
+
+    <div class="principles">
+      <div class="principle">
+        <p><strong>Engineering from first principles.</strong> We use ETABS, SAP2000, and every tool available. But we understand what the software is doing before we trust its output. The structural behavior governs the design — the software verifies it. When the model says something that contradicts the physics, we fix the model, not the physics. Current self-directed study includes Chopra's <em>Dynamics of Structures</em> and Clough & Penzien's <em>Dynamics of Structures</em> — because seismic retrofit demands understanding dynamics at the equation level, not just the button level.</p>
+      </div>
+
+      <div class="principle">
+        <p><strong>Honest assessment, even when it's uncomfortable.</strong> We tell clients what the structure can and cannot do. We don't inflate capacity to win a project, and we don't add unnecessary conservatism to avoid thinking. If a building needs ₱5M in foundation work, we say that. If it needs ₱500K, we say that too. The numbers are what they are.</p>
+      </div>
+
+      <div class="principle">
+        <p><strong>Construction-informed design.</strong> Every detail we draw has to survive contact with a real contractor, real weather, and real material availability in the Philippines. We design for the field, not for the plan checker's desk. If a connection can't be welded in position at 8 meters above the floor with a stick welder, we don't draw it.</p>
+      </div>
+    </div>
+
+    <p>Siglat Konstract works with a network of licensed architects, MEP engineers, and specialist consultants. When a project requires disciplines beyond structural engineering, we assemble the right team — but the structural work stays in-house, under our seal, with our name on it.</p>
+
+    <p>Based in the Philippines. Working within 100 km of Manila, with capacity for projects nationwide when the engineering demands it.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in touch</p>
+    <h2>Contact</h2>
+    <p>If you have a structural problem that needs solving — or a project that needs an engineer who shows up, does the work, and delivers what was promised — send us a message.</p>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:office@siglatkonstract.com">office@siglatkonstract.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+639456086917">+63 945 608 6916</a></p>
+      <p><strong>Office:</strong> 407 Sampaguita St. GM Homes Almanza Uno Las Piñas City</p>
+    </div>
+
+    <p class="contact-note">We respond within 24 hours. If the problem is urgent, call directly.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Siglat Konstract OPC. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
